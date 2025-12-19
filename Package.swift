@@ -1,20 +1,26 @@
-// swift-tools-version:5.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.4
 import PackageDescription
 
 let package = Package(
-    name: "ActionSheetPicker-3.0",
-    platforms: [.iOS(.v9)],
+    name: "ActionSheetPicker",
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
         .library(
-            name: "ActionSheetPicker-3.0",
-            targets: ["CoreActionSheetPicker"]),
+            name: "ActionSheetPicker",
+            targets: ["ActionSheetPicker"]
+        )
     ],
     targets: [
         .target(
-            name: "CoreActionSheetPicker",
-            path: "CoreActionSheetPicker/CoreActionSheetPicker/Pickers",
+            name: "ActionSheetPicker",
+            path: "CoreActionSheetPicker/CoreActionSheetPicker",
+            exclude: [
+                "Example",
+                "Sample",
+                "README.md"
+            ],
             publicHeadersPath: "include"
         )
     ],
